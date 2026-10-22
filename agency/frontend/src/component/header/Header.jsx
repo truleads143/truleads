@@ -86,7 +86,6 @@ export default function Header() {
 
     // Combined visibility state (open if hovered OR clicked)
     const verticalsVisible = isVerticalsHovered || isVerticalsClicked;
-    const companyVisible = isCompanyHovered || isCompanyClicked;
     const planVisible = isPlanHovered || isPlanClicked; // NEW: Plan Visibility
 
     // --- Desktop Hover/Click Logic ---
@@ -152,9 +151,6 @@ export default function Header() {
         { name: "Auto Insurance", to: "/verticals/auto-insurance" },
     ];
 
-    const company = [
-        { name: "LinkedIn", href: "https://www.linkedin.com/company/truleads-llc/", external: true },
-    ];
 
     // NEW Dropdown Data
     // Used by the mobile "Find your plan" menu (it crashed when this list was commented out)
@@ -249,51 +245,11 @@ export default function Header() {
                                 </ul>
                             </li>
 
-                            {/* Company Dropdown (Hover/Click Logic) */}
-                            <li
-                                className="relative"
-                                // Hover handlers remain for temporary open/close
-                                onMouseEnter={() => showDropdown(setIsCompanyHovered, setCompanyTimeoutId, companyTimeoutId)}
-                                onMouseLeave={() => hideDropdownWithDelay(setIsCompanyHovered, setCompanyTimeoutId)}
-                            >
-                                {/* Button uses new class logic */}
-                                <button
-                                    onClick={() => handleParentClick('company')}
-                                    className={parentDropdownButtonClass(isCompanyClicked, companyVisible, colors)}
-                                >
-                                    Company ▾
-                                </button>
-                                <ul
-                                    className={getDropdownContainerClasses(companyVisible)}
-                                    // Dropdown area must also handle hover to cancel hiding
-                                    onMouseEnter={() => showDropdown(setIsCompanyHovered, setCompanyTimeoutId, companyTimeoutId)}
-                                    onMouseLeave={() => hideDropdownWithDelay(setIsCompanyHovered, setCompanyTimeoutId)}
-                                >
-                                    {company.map((item) => (
-                                        <li key={item.name}>
-                                            {item.external ? (
-                                                <a
-                                                    href={item.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className={dropdownItemClass("rounded-lg")}
-                                                    onClick={() => setIsCompanyClicked(false)}
-                                                >
-                                                    {item.name}
-                                                </a>
-                                            ) : (
-                                                <Link
-                                                    to={item.to}
-                                                    className={dropdownItemClass("rounded-lg")}
-                                                    // Reset persistent state when a child link is clicked
-                                                    onClick={() => setIsCompanyClicked(false)}
-                                                >
-                                                    {item.name}
-                                                </Link>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
+                            {/* LinkedIn (opens the company page in a new tab) */}
+                            <li>
+                                <a href="https://www.linkedin.com/company/truleads-llc/" target="_blank" rel="noopener noreferrer" className={navLinkClass({ isActive: false })}>
+                                    LinkedIn
+                                </a>
                             </li>
 
                             {/* Query NavLink */}
@@ -397,47 +353,7 @@ export default function Header() {
                         )}
                     </li>
 
-                    {/* Company (Mobile - Click-based) - IMPROVED SEPARATION AND NESTED STYLING */}
-                    <li className="">
-                        <button
-                            onClick={() => toggleDropdown("company")}
-                            className="w-full text-left flex justify-between items-center py-2 hover:text-[#DCC59A]"
-                        >
-                            Company {openDropdown === "company" ? "▴" : "▾"}
-                        </button>
-                        {openDropdown === "company" && (
-                            <div className="mt-2 p-3 rounded-lg bg-[#0B1F38] text-white/90 border-l-2 border-[#A67C37]">
-                                <ul className="flex flex-col gap-2 text-sm">
-                                    {company.map(item => (
-                                        <li key={item.name}>
-                                            {item.external ? (
-                                                <a
-                                                    href={item.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    onClick={() => setIsSidebarOpen(false)}
-                                                    className="block py-1 px-2 rounded-md transition-colors duration-200 hover:bg-white/10"
-                                                >
-                                                    {item.name}
-                                                </a>
-                                            ) : (
-                                                <NavLink
-                                                    to={item.to}
-                                                    onClick={() => setIsSidebarOpen(false)}
-                                                    className={({ isActive }) =>
-                                                        `block py-1 px-2 rounded-md transition-colors duration-200 ${isActive ? 'text-[#DCC59A] font-semibold' : 'hover:bg-white/10'
-                                                        }`
-                                                    }
-                                                >
-                                                    {item.name}
-                                                </NavLink>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </li>
+                    <li><a href="https://www.linkedin.com/company/truleads-llc/" target="_blank" rel="noopener noreferrer" onClick={() => setIsSidebarOpen(false)} className="flex justify-between py-2 hover:text-[#DCC59A]">LinkedIn</a></li>
 
                     {/* Query NavLink */}
                     <li><NavLink to="/query" onClick={() => setIsSidebarOpen(false)} className="flex justify-between">Query</NavLink></li>

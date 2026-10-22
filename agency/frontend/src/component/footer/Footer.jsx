@@ -48,7 +48,6 @@ export default function Footer() {
             <p className="text-[#B9C3D2] text-sm leading-relaxed mb-5">
               212 N. 2nd St. STE 100<br />
               Richmond, KY 40475<br />
-              Phone: +1 (704) 263-9160<br />
               Email: connect@truleads.agency
             </p>
             <div className="flex gap-3">
