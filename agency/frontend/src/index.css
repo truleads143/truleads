@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
 
 /*
@@ -8,10 +8,10 @@
   are remapped here, so every page picks up the new palette automatically.
 */
 @theme {
-  --font-serif: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
-  --font-script: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
-  --font-sans: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
-  --font-plain: "Lato", "Helvetica Neue", Arial, sans-serif;
+  /* Headings: Dancing Script. Text: Source Sans 3. */
+  --font-serif: "Dancing Script", "Brush Script MT", cursive;
+  --font-script: "Dancing Script", "Brush Script MT", cursive;
+  --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
 
   /* Antique gold (replaces the old bright cyan accents) */
   --color-cyan-50: #fbf8f2;
@@ -68,56 +68,26 @@
     scroll-behavior: smooth;
   }
 
-  /* Whole site in Great Vibes calligraphy.
-     Script letters run small, so font-size-adjust enlarges them evenly,
-     and all-caps / wide letter-spacing are turned off because capital
-     script letters strung together are unreadable. */
   body {
     font-family: var(--font-sans);
-    font-size-adjust: 0.55;
     background-color: #fbf9f5;
     color: #2b2f36;
     -webkit-font-smoothing: antialiased;
   }
 
-  *,
-  *::before,
-  *::after {
-    font-family: var(--font-sans) !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
-  }
-
-  h1,
-  h2 {
-    font-size-adjust: 0.42;
-  }
-
+  /* All headings in Dancing Script */
   h1,
   h2,
   h3 {
-    font-weight: 400 !important;
+    font-family: var(--font-script);
+    font-weight: 600 !important;
+    letter-spacing: 0;
     line-height: 1.15;
     text-wrap: balance;
   }
 
-  strong,
-  b,
-  .font-bold,
-  .font-semibold,
-  .font-extrabold {
-    font-weight: 400 !important;
-  }
-
-  /* Keep what people type in forms in a plain face so it stays legible */
-  input,
-  select,
-  textarea,
-  input::placeholder,
-  textarea::placeholder,
-  option {
-    font-family: var(--font-plain) !important;
-    font-size-adjust: none;
+  h1 {
+    font-weight: 700 !important;
   }
 
   ::selection {
@@ -138,7 +108,7 @@
 
   .eyebrow {
     font-family: var(--font-sans);
-    font-size: 1.15rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -156,7 +126,7 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     transition: background 0.25s ease, transform 0.25s ease;
     cursor: pointer;
   }
@@ -174,7 +144,7 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     transition: background 0.25s ease, color 0.25s ease;
     cursor: pointer;
   }
