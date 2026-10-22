@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import logo from "../../assets/logo_header.png";
 
 const linkClass = "text-[#B9C3D2] hover:text-[#DCC59A] transition-colors";
@@ -52,8 +52,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                [FaFacebookF, "#", "Facebook"],
-                [FaTwitter, "#", "Twitter"],
+                [FaFacebookF, "https://www.facebook.com/share/1KCZYcZauF/", "Facebook"],
                 [
                   FaLinkedinIn,
                   "https://www.linkedin.com/company/truleads-llc/",
