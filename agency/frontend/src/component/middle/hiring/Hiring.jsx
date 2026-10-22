@@ -6,20 +6,20 @@ import { useNavigate } from "react-router-dom";
 
 // Custom color palette matching the requirements
 const colors = {
-  'primary-blue': '#124D95',
-  'cyan-200': '#A5F3FC',
-  'cyan-300': '#67E8F9',
-  'cyan-500': '#06B6D4',
-  'gray-100': '#F3F4F6',
-  'gray-200': '#E5E7EB',
-  'gray-500': '#6B7280',
+  'primary-blue': '#0F2A4A',
+  'cyan-200': '#ECE0C6',
+  'cyan-300': '#DCC59A',
+  'cyan-500': '#A67C37',
+  'gray-100': '#F6F2EA',
+  'gray-200': '#E8E1D3',
+  'gray-500': '#5B6170',
   'black-50': '#00000080',
 };
 
 // Feature Card Component (Kept for potential future use/template consistency)
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div 
-    className="bg-white p-6 rounded-2xl shadow-xl border-2 border-transparent 
+    className="bg-white p-6 rounded-sm shadow-xl border-2 border-transparent 
               transition duration-300 hover:scale-[1.02]"
     style={{ borderColor: colors['cyan-300'], transition: 'border-color 0.3s ease-in-out' }} // Custom hover border color
   >
@@ -73,7 +73,7 @@ const HiringPage = () => {
 
           {/* REQUIRED TEXT IN THE MIDDLE */}
           <p 
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-12 py-4 px-6 inline-block rounded-xl" 
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-12 py-4 px-6 inline-block rounded-sm" 
             style={{ 
               color: '#FFFFFF', 
               backgroundColor: colors['primary-blue'],
@@ -93,7 +93,7 @@ const HiringPage = () => {
           
           {/* Example of a temporary action (e.g., join a waiting list) */}
           <button 
-            className="bg-gray-100 text-xl py-3 px-8 rounded-xl font-semibold shadow-2xl 
+            className="bg-gray-100 text-xl py-3 px-8 rounded-sm font-semibold shadow-2xl 
                        transition duration-300 hover:bg-cyan-200 hover:shadow-md"
             style={{ color: colors['primary-blue'] }}
             onClick={()=> navigate("/subscribe")}
@@ -103,9 +103,6 @@ const HiringPage = () => {
           
         </div>
       </section>
-
-      ---
-
       {/* 2. Feature Section - Repurposed as "Why Join Us" */}
       <section 
         className="py-16 md:py-24" 
@@ -122,15 +119,12 @@ const HiringPage = () => {
           </div>
         </div>
       </section>
-
-      ---
-      
       {/* 3. Call To Action (CTA) Section - Focus on Connection */}
       <section className="py-16 md:py-20">
         <div 
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center rounded-2xl p-10 sm:p-16" 
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center rounded-sm p-10 sm:p-16" 
           style={{ 
-            background: `linear-gradient(90deg, ${colors['primary-blue']} 0%, ${colors['cyan-500']} 100%)`
+            background: `linear-gradient(135deg, #0F2A4A 0%, #1B3D66 100%)`
           }}
         >
           <h2 
@@ -144,7 +138,7 @@ const HiringPage = () => {
           </p>
           
           <button 
-            className="w-full md:w-auto py-3 px-10 text-lg font-bold rounded-2xl 
+            className="w-full md:w-auto py-3 px-10 text-lg font-bold rounded-sm 
                       transition duration-300 shadow-xl cursor-pointer hover:bg-cyan-300"
             onClick={() => navigate('/')} // Example navigation
             style={registerButtonStyle}
@@ -161,4 +155,4 @@ const HiringPage = () => {
   );
 };
 
-export default HiringPage;
+export default HiringPage;

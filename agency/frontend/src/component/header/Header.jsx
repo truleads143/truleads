@@ -13,33 +13,31 @@ const colors = {
 
 // Function to determine the NavLink class based on active status (for non-dropdown links)
 const navLinkClass = ({ isActive }) =>
-    `block py-2 px-4 rounded-xl transition-all duration-300 lg:mx-1 lg:py-2 lg:px-4 text-center font-semibold text-sm
+    `block py-2 px-1 border-b-2 transition-colors duration-300 text-center text-[13px] font-bold tracking-[0.14em] uppercase
     ${isActive
-        // FIX: Replaced dynamic color strings with explicit hex codes for guaranteed visibility
-        ? `bg-[#A5F3FC] text-[#124D95] shadow-md hover:bg-[#67E8F9] hover:shadow-lg`
-        // Inactive Hover State: Translucent White BG, Cyan Text, Subtle Scale Up
-        : 'text-white hover:bg-white/20 hover:text-cyan-300 hover:scale-[1.05]'
+        ? 'border-[#A67C37] text-[#DCC59A]'
+        : 'border-transparent text-white/90 hover:text-[#DCC59A]'
     }`;
 
 // Function for dropdown item class (white background) - IMPROVED SIZE AND HOVER
 const dropdownItemClass = (baseClass = "") =>
-    `${baseClass} block px-5 py-3 text-base font-medium transition-all duration-200 
-     text-[#124D95] hover:bg-cyan-200`; // Increased padding/text size and nice cyan hover effect
+    `${baseClass} block px-5 py-3 text-sm font-medium transition-colors duration-200
+     text-[#0F2A4A] border-l-2 border-transparent hover:border-[#A67C37] hover:bg-[#F6F2EA]`; // Increased padding/text size and nice cyan hover effect
 
 // --- NEW HELPER FUNCTION FOR DROPDOWN BUTTON APPEARANCE ---
 const parentDropdownButtonClass = (isClicked, isVisible, colors) => {
     // Base classes
-    let classes = `flex items-center gap-1 py-2 px-4 rounded-xl transition-all duration-300 lg:mx-1 lg:py-2 lg:px-4 text-center font-semibold text-sm`;
+    let classes = `flex items-center gap-1 py-2 px-1 border-b-2 transition-colors duration-300 text-center text-[13px] font-bold tracking-[0.14em] uppercase cursor-pointer`;
 
     if (isClicked) {
         // Persistent Click State: Bright Cyan BG (cyan-300) to signal "locked"
-        classes += ` bg-[#67E8F9] text-[#124D95] shadow-lg transform scale-100`;
+        classes += ` border-[#A67C37] text-[#DCC59A]`;
     } else if (isVisible) {
         // Hover/Open State (Temporary): Matches standard active NavLink BG (cyan-200)
-        classes += ` bg-[#A5F3FC] text-[#124D95] shadow-md hover:bg-[#67E8F9] hover:shadow-lg transform scale-100`;
+        classes += ` border-transparent text-[#DCC59A]`;
     } else {
         // Inactive State: Uses the NavLink inactive/hover styles
-        classes += ` text-white hover:bg-white/20 hover:text-cyan-300 hover:scale-[1.05]`;
+        classes += ` border-transparent text-white/90 hover:text-[#DCC59A]`;
     }
 
     return classes;
@@ -161,15 +159,15 @@ export default function Header() {
     ];
 
     // NEW Dropdown Data
-    // const findYourPlan = [
-    //     { name: "Affordable Care Act (ACA)", to: "/subsidizedhealthplan/aca" },
-        // { name: "FE", to: "/subsidizedhealthplan/fe" },
-    // ];
+    // Used by the mobile "Find your plan" menu (it crashed when this list was commented out)
+    const findYourPlan = [
+        { name: "Affordable Care Act (ACA)", to: "/subsidizedhealthplan/aca" },
+    ];
 
 
     // Helper function for smooth desktop dropdown container classes
     const getDropdownContainerClasses = (isHovered) => `
-        absolute left-0 mt-1 w-max bg-white text-${colors['primary-blue']} shadow-lg rounded-lg 
+        absolute left-0 mt-3 w-max bg-white py-2 shadow-xl border-t-2 border-[#A67C37] 
         transition-all duration-300 ease-in-out transform origin-top
         ${isHovered
             ? 'visible opacity-100 translate-y-0 max-h-screen'
@@ -178,8 +176,8 @@ export default function Header() {
 
 
     return (
-        <header className="shadow sticky top-0 z-50">
-            <nav className="bg-[#124D95] px-4 lg:px-6 py-2.5">
+        <header className="sticky top-0 z-50 shadow-md">
+            <nav className="bg-[#0F2A4A] border-b border-[#A67C37]/40 px-4 lg:px-6 py-2.5">
                 <div className="flex items-center justify-between max-w-screen-xl mx-auto">
 
                     {/* LEFT: Logo */}
@@ -202,7 +200,7 @@ export default function Header() {
 
                     {/* CENTER: Desktop Nav */}
                     <div className="hidden lg:flex flex-1 justify-center">
-                        <ul className="flex gap-8 font-medium items-center">
+                        <ul className="flex gap-9 items-center">
 
                             {/* Home NavLink */}
                             <li>
@@ -345,8 +343,7 @@ export default function Header() {
                     <div className="hidden lg:flex items-center">
                         <Link
                             to="/query"
-                            className="bg-gray-100 text-[#124D95] px-4 py-2 rounded-xl font-semibold 
-                                     transition duration-300 hover:bg-cyan-200 hover:shadow-md"
+                            className="btn-gold"
                         >
                             Contact Us
                         </Link>
@@ -356,7 +353,7 @@ export default function Header() {
 
             {/* SIDEBAR (Mobile) */}
             <div
-                className={`fixed top-0 left-0 h-full w-64 bg-[#124D95] text-white shadow-lg transform transition-transform duration-300 z-50 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                className={`fixed top-0 left-0 h-full w-72 bg-[#0F2A4A] border-r border-[#A67C37]/40 text-white shadow-lg transform transition-transform duration-300 z-50 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                     }`}
             >
                 {/* Close Button */}
@@ -376,12 +373,12 @@ export default function Header() {
                     <li className="">
                         <button
                             onClick={() => toggleDropdown("verticals")}
-                            className="w-full text-left flex justify-between  items-center py-2 hover:text-cyan-200"
+                            className="w-full text-left flex justify-between  items-center py-2 hover:text-[#DCC59A]"
                         >
                             Verticals {openDropdown === "verticals" ? "▴" : "▾"}
                         </button>
                         {openDropdown === "verticals" && (
-                            <div className="mt-2 p-3 rounded-lg bg-gray-100 text-cyan-800 shadow-inner">
+                            <div className="mt-2 p-3 rounded-lg bg-[#0B1F38] text-white/90 border-l-2 border-[#A67C37]">
                                 <ul className="flex flex-col gap-2 text-sm">
                                     {verticals.map(item => (
                                         <li key={item.name}>
@@ -389,7 +386,7 @@ export default function Header() {
                                                 to={item.to}
                                                 onClick={() => setIsSidebarOpen(false)}
                                                 className={({ isActive }) =>
-                                                    `block py-1 px-2 rounded-md transition-colors duration-200 ${isActive ? 'bg-[#A5F3FC] text-[#124D95] font-semibold' : 'hover:bg-white/10'
+                                                    `block py-1 px-2 rounded-md transition-colors duration-200 ${isActive ? 'text-[#DCC59A] font-semibold' : 'hover:bg-white/10'
                                                     }`
                                                 }
                                             >
@@ -406,12 +403,12 @@ export default function Header() {
                     <li className="">
                         <button
                             onClick={() => toggleDropdown("company")}
-                            className="w-full text-left flex justify-between items-center py-2 hover:text-cyan-200"
+                            className="w-full text-left flex justify-between items-center py-2 hover:text-[#DCC59A]"
                         >
                             Company {openDropdown === "company" ? "▴" : "▾"}
                         </button>
                         {openDropdown === "company" && (
-                            <div className="mt-2 p-3 rounded-lg bg-gray-100 text-cyan-800 shadow-inner">
+                            <div className="mt-2 p-3 rounded-lg bg-[#0B1F38] text-white/90 border-l-2 border-[#A67C37]">
                                 <ul className="flex flex-col gap-2 text-sm">
                                     {company.map(item => (
                                         <li key={item.name}>
@@ -430,7 +427,7 @@ export default function Header() {
                                                     to={item.to}
                                                     onClick={() => setIsSidebarOpen(false)}
                                                     className={({ isActive }) =>
-                                                        `block py-1 px-2 rounded-md transition-colors duration-200 ${isActive ? 'bg-[#A5F3FC] text-[#124D95] font-semibold' : 'hover:bg-white/10'
+                                                        `block py-1 px-2 rounded-md transition-colors duration-200 ${isActive ? 'text-[#DCC59A] font-semibold' : 'hover:bg-white/10'
                                                         }`
                                                     }
                                                 >
@@ -451,12 +448,12 @@ export default function Header() {
                     <li className="">
                         <button
                             onClick={() => toggleDropdown("plan")}
-                            className="w-full text-left flex justify-between items-center py-2 hover:text-cyan-200"
+                            className="w-full text-left flex justify-between items-center py-2 hover:text-[#DCC59A]"
                         >
                             Find your plan {openDropdown === "plan" ? "▴" : "▾"}
                         </button>
                         {openDropdown === "plan" && (
-                            <div className="mt-2 p-3 rounded-lg bg-gray-100 text-cyan-800 shadow-inner">
+                            <div className="mt-2 p-3 rounded-lg bg-[#0B1F38] text-white/90 border-l-2 border-[#A67C37]">
                                 <ul className="flex flex-col gap-2 text-sm">
                                     {findYourPlan.map(item => (
                                         <li key={item.name}>
@@ -465,7 +462,7 @@ export default function Header() {
                                                 target="_blank"
                                                 onClick={() => setIsSidebarOpen(false)}
                                                 className={({ isActive }) =>
-                                                    `block py-1 px-2 rounded-md transition-colors duration-200 ${isActive ? 'bg-[#A5F3FC] text-[#124D95] font-semibold' : 'hover:bg-white/10'
+                                                    `block py-1 px-2 rounded-md transition-colors duration-200 ${isActive ? 'text-[#DCC59A] font-semibold' : 'hover:bg-white/10'
                                                     }`
                                                 }
                                             >
@@ -482,7 +479,7 @@ export default function Header() {
                         <Link
                             to="/query"
                             onClick={() => setIsSidebarOpen(false)}
-                            className="block text-center bg-gray-100 text-[#124D95] px-4 py-2 rounded-lg hover:bg-cyan-200 font-bold"
+                            className="btn-gold w-full justify-center"
                         >
                             Contact Us
                         </Link>
@@ -501,4 +498,4 @@ export default function Header() {
             }
         </header >
     );
-}
+}

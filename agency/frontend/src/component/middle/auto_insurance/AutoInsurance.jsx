@@ -10,7 +10,7 @@ const CarIcon = () => (
         viewBox="0 0 24 24" 
         strokeWidth="1.5" 
         stroke="currentColor" 
-        className="w-20 h-20 text-[#06B6D4] opacity-80 mb-6 mx-auto"
+        className="w-20 h-20 text-[#A67C37] opacity-80 mb-6 mx-auto"
     >
         <path 
             strokeLinecap="round" 
@@ -59,13 +59,13 @@ const AutoInsuranceComingSoon = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 p-4 sm:p-8 flex flex-col justify-center items-center text-center">
-            <div className="w-full max-w-2xl bg-white p-8 sm:p-10 lg:p-12 rounded-2xl shadow-xl hover:shadow-cyan-500/50 transition duration-300">
+            <div className="w-full max-w-2xl bg-white p-8 sm:p-10 lg:p-12 rounded-sm shadow-xl hover:shadow-cyan-500/50 transition duration-300">
 
                 <CarIcon /> {/* Icon for visual appeal */}
 
-                <h1 className="text-4xl font-extrabold text-[#124D95] mb-4 sm:mb-6">
+                <h1 className="text-4xl font-extrabold text-[#0F2A4A] mb-4 sm:mb-6">
                     Auto Insurance
-                    <span className="block text-xl sm:text-2xl text-[#06B6D4] mt-2">Coming Soon!</span>
+                    <span className="block text-xl sm:text-2xl text-[#A67C37] mt-2">Coming Soon!</span>
                 </h1>
 
                 <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-8">
@@ -74,7 +74,7 @@ const AutoInsuranceComingSoon = () => {
                 </p>
 
                 <div className="mb-8">
-                    <h2 className="text-2xl font-semibold text-[#124D95] mb-4">
+                    <h2 className="text-2xl font-semibold text-[#0F2A4A] mb-4">
                         Be the First to Know!
                     </h2>
                     <p className="text-gray-600 mb-6 max-w-md mx-auto">
@@ -87,18 +87,18 @@ const AutoInsuranceComingSoon = () => {
                             placeholder="Your Email Address"
                             value={email}
                             onChange={handleEmailChange}
-                            className="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A5F3FC] bg-gray-100 text-gray-800"
+                            className="flex-grow p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#ECE0C6] bg-gray-100 text-gray-800"
                             required
                         />
                         <button
                             type="submit"
                             disabled={submissionStatus === 'submitting'}
                             className={`
-                                px-6 py-3 rounded-lg text-white font-semibold transition duration-200 ease-in-out
+                                px-6 py-3 rounded text-white font-semibold transition duration-200 ease-in-out
                                 flex items-center justify-center gap-2
                                 ${submissionStatus === 'submitting' 
                                     ? 'bg-gray-400 cursor-not-allowed' 
-                                    : 'bg-[#06B6D4] hover:bg-[#06A5C4] focus:outline-none focus:ring-2 focus:ring-[#A5F3FC]'}
+                                    : 'bg-[#A67C37] hover:bg-[#06A5C4] focus:outline-none focus:ring-2 focus:ring-[#ECE0C6]'}
                             `}
                         >
                             {submissionStatus === 'submitting' ? (
@@ -129,4 +129,4 @@ const AutoInsuranceComingSoon = () => {
     );
 };
 
-export default AutoInsuranceComingSoon;
+export default AutoInsuranceComingSoon;

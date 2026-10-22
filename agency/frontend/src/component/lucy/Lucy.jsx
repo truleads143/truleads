@@ -26,7 +26,7 @@ const questionsList = [
 
 // Typing Animation Component (Modern WhatsApp style dots)
 const TypingIndicator = () => (
-    <div className={`flex items-center space-x-1 ${BOT_MESSAGE_COLOR} text-gray-800 p-3 rounded-xl rounded-tl-sm shadow-sm max-w-fit`}>
+    <div className={`flex items-center space-x-1 ${BOT_MESSAGE_COLOR} text-gray-800 p-3 rounded-sm rounded-tl-sm shadow-sm max-w-fit`}>
         <p className="font-medium text-indigo-600 mb-1">Lucy AI</p>
         <div className="flex space-x-0.5 ml-2">
             <motion.div
@@ -130,7 +130,7 @@ export default function LucyAI() {
             {open && (
                 <motion.div
                     // Height is now h-[80%] for responsive resizing
-                    className="fixed bottom-5 right-5 w-80 h-[80%] bg-white shadow-2xl rounded-xl flex flex-col z-50 overflow-hidden"
+                    className="fixed bottom-5 right-5 w-80 h-[80%] bg-white shadow-2xl rounded-sm flex flex-col z-50 overflow-hidden"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
@@ -167,7 +167,7 @@ export default function LucyAI() {
                                 {/* User Message Bubble */}
                                 {r.user && (
                                     <div className="flex justify-end">
-                                        <div className={`max-w-[80%] ${USER_MESSAGE_COLOR} text-white p-3 rounded-xl rounded-br-sm shadow-md`}>
+                                        <div className={`max-w-[80%] ${USER_MESSAGE_COLOR} text-white p-3 rounded-sm rounded-br-sm shadow-md`}>
                                             <p>{r.user}</p>
                                         </div>
                                     </div>
@@ -176,7 +176,7 @@ export default function LucyAI() {
                                 {/* AI Message Bubble */}
                                 {r.ai && (
                                     <div className="flex justify-start mt-2">
-                                        <div className={`max-w-[80%] ${BOT_MESSAGE_COLOR} text-gray-800 p-3 rounded-xl rounded-tl-sm shadow-sm`}>
+                                        <div className={`max-w-[80%] ${BOT_MESSAGE_COLOR} text-gray-800 p-3 rounded-sm rounded-tl-sm shadow-sm`}>
                                             <p className="font-medium text-indigo-600 mb-1">Lucy AI</p>
 
                                             {/* AI Text Response */}
@@ -187,7 +187,7 @@ export default function LucyAI() {
                                                 <button
                                                     onClick={() =>redirectToQueryForm()}
                                                     // Modern Tailwind Styles
-                                                    className={`mt-3 ${PRIMARY_COLOR} text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md transition duration-150 ${HOVER_COLOR}`}
+                                                    className={`mt-3 ${PRIMARY_COLOR} text-white px-4 py-2 rounded text-sm font-semibold shadow-md transition duration-150 ${HOVER_COLOR}`}
                                                 >
                                                     Connect to an Agent
                                                 </button>
@@ -273,4 +273,4 @@ export default function LucyAI() {
             )}
         </>
     );
-}
+}

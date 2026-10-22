@@ -1,1 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap');
 @import "tailwindcss";
+
+/*
+  TruLeads — classic theme
+  Deep navy, antique gold and warm ivory, with a serif display face.
+  The Tailwind colour scales used across the pages (cyan / blue / indigo / sky)
+  are remapped here, so every page picks up the new palette automatically.
+*/
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Lato", "Helvetica Neue", Arial, sans-serif;
+
+  /* Antique gold (replaces the old bright cyan accents) */
+  --color-cyan-50: #fbf8f2;
+  --color-cyan-100: #f5eedf;
+  --color-cyan-200: #ece0c6;
+  --color-cyan-300: #dcc59a;
+  --color-cyan-400: #c9a96e;
+  --color-cyan-500: #a67c37;
+  --color-cyan-600: #8c672b;
+  --color-cyan-700: #6f5122;
+  --color-cyan-800: #563f1b;
+  --color-cyan-900: #3d2d13;
+
+  /* Navy (replaces blue / indigo / sky) */
+  --color-blue-50: #f3f5f9;
+  --color-blue-100: #e3e8f0;
+  --color-blue-200: #c4cede;
+  --color-blue-300: #9aa9c2;
+  --color-blue-400: #6a7fa0;
+  --color-blue-500: #3f5880;
+  --color-blue-600: #233f66;
+  --color-blue-700: #1a3253;
+  --color-blue-800: #142843;
+  --color-blue-900: #0f2a4a;
+
+  --color-indigo-50: #f3f5f9;
+  --color-indigo-100: #e3e8f0;
+  --color-indigo-500: #3f5880;
+  --color-indigo-600: #1a3253;
+  --color-indigo-700: #142843;
+
+  --color-sky-50: #f3f5f9;
+  --color-sky-100: #e3e8f0;
+  --color-sky-500: #3f5880;
+  --color-sky-600: #233f66;
+
+  --color-teal-500: #a67c37;
+  --color-teal-600: #8c672b;
+  --color-emerald-400: #c9a96e;
+
+  /* Warm neutrals */
+  --color-gray-50: #fbf9f5;
+  --color-gray-100: #f6f2ea;
+  --color-slate-50: #fbf9f5;
+  --color-slate-100: #f6f2ea;
+
+  --color-navy: #0f2a4a;
+  --color-gold: #a67c37;
+  --color-ivory: #fbf9f5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #fbf9f5;
+    color: #2b2f36;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    line-height: 1.15;
+  }
+
+  ::selection {
+    background: #ece0c6;
+    color: #0f2a4a;
+  }
+}
+
+@layer components {
+  /* Small gold rule used under section headings */
+  .gold-rule {
+    display: block;
+    width: 64px;
+    height: 2px;
+    background: #a67c37;
+    margin: 1rem auto 0;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #a67c37;
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #a67c37;
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+    cursor: pointer;
+  }
+  .btn-gold:hover {
+    background: #8c672b;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid currentColor;
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: background 0.25s ease, color 0.25s ease;
+    cursor: pointer;
+  }
+}

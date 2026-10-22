@@ -4,9 +4,9 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <div className="max-w-4xl mx-auto px-6 py-8">
         {/* Header */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-slate-200">
+        <div className="bg-white rounded-sm shadow-xl p-8 mb-8 border border-slate-200">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-sm flex items-center justify-center">
               <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -24,9 +24,9 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Interpretation and Definitions */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-slate-200">
+        <div className="bg-white rounded-sm shadow-xl p-8 mb-8 border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold">1</span>
+            <span className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center text-blue-600 text-sm font-bold">1</span>
             Interpretation and Definitions
           </h2>
           
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
               { term: "Website", def: `refers to TruLeads LLC, accessible from ` , link:"/"},
               { term: "You", def: "means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable." }
             ].map((item, idx) => (
-              <div key={idx} className="bg-slate-50 rounded-lg p-4 border border-slate-200 hover:border-blue-300 transition-colors">
+              <div key={idx} className="bg-slate-50 rounded p-4 border border-slate-200 hover:border-blue-300 transition-colors">
                 <span className="font-semibold text-blue-600">{item.term}</span>
                 <span className="text-slate-600"> {item.def}</span>
                 {item.link && <a href={item.link} className="text-blue-600" target="_blank">https://www.truleads.agency/</a>}
@@ -61,9 +61,9 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Collecting and Using Data */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-slate-200">
+        <div className="bg-white rounded-sm shadow-xl p-8 mb-8 border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold">2</span>
+            <span className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center text-blue-600 text-sm font-bold">2</span>
             Collecting and Using Your Personal Data
           </h2>
           
@@ -97,21 +97,21 @@ export default function PrivacyPolicy() {
               </p>
               
               <div className="space-y-4">
-                <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                <div className="bg-purple-50 rounded p-4 border border-purple-200">
                   <p className="font-semibold text-slate-700 mb-2">Necessary / Essential Cookies</p>
                   <p className="text-sm text-slate-600 mb-1"><span className="font-medium">Type:</span> Session Cookies</p>
                   <p className="text-sm text-slate-600 mb-2"><span className="font-medium">Administered by:</span> Us</p>
                   <p className="text-sm text-slate-600">These Cookies are essential to provide you with services available through the Website and to enable you to use some of its features.</p>
                 </div>
 
-                <div className="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
+                <div className="bg-indigo-50 rounded p-4 border border-indigo-200">
                   <p className="font-semibold text-slate-700 mb-2">Cookies Policy / Notice Acceptance Cookies</p>
                   <p className="text-sm text-slate-600 mb-1"><span className="font-medium">Type:</span> Persistent Cookies</p>
                   <p className="text-sm text-slate-600 mb-2"><span className="font-medium">Administered by:</span> Us</p>
                   <p className="text-sm text-slate-600">These Cookies identify if users have accepted the use of cookies on the Website.</p>
                 </div>
 
-                <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <div className="bg-blue-50 rounded p-4 border border-blue-200">
                   <p className="font-semibold text-slate-700 mb-2">Functionality Cookies</p>
                   <p className="text-sm text-slate-600 mb-1"><span className="font-medium">Type:</span> Persistent Cookies</p>
                   <p className="text-sm text-slate-600 mb-2"><span className="font-medium">Administered by:</span> Us</p>
@@ -123,9 +123,9 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Use of Personal Data */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-slate-200">
+        <div className="bg-white rounded-sm shadow-xl p-8 mb-8 border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold">3</span>
+            <span className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center text-blue-600 text-sm font-bold">3</span>
             Use of Your Personal Data
           </h2>
           
@@ -142,7 +142,7 @@ export default function PrivacyPolicy() {
               { title: "For business transfers", desc: "to evaluate or conduct a merger, divestiture, restructuring, or other business transfers." },
               { title: "For other purposes", desc: "such as data analysis, identifying usage trends, and improving our Service." }
             ].map((item, idx) => (
-              <div key={idx} className="flex gap-3 p-3 bg-slate-50 rounded-lg hover:bg-blue-50 transition-colors">
+              <div key={idx} className="flex gap-3 p-3 bg-slate-50 rounded hover:bg-blue-50 transition-colors">
                 <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5">
                   ✓
                 </div>
@@ -156,9 +156,9 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Additional Sections */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-slate-200">
+        <div className="bg-white rounded-sm shadow-xl p-8 mb-8 border border-slate-200">
           <h2 className="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
-            <span className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold">4</span>
+            <span className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center text-blue-600 text-sm font-bold">4</span>
             Data Protection & Your Rights
           </h2>
           
@@ -187,9 +187,9 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Children's Privacy */}
-        <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl shadow-xl p-8 mb-8 border border-amber-200">
+        <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-sm shadow-xl p-8 mb-8 border border-amber-200">
           <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-            <span className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 text-sm font-bold">5</span>
+            <span className="w-8 h-8 bg-amber-100 rounded flex items-center justify-center text-amber-600 text-sm font-bold">5</span>
             Children's Privacy
           </h2>
           <p className="text-slate-600 leading-relaxed">
@@ -198,14 +198,14 @@ export default function PrivacyPolicy() {
         </div>
 
         {/* Contact Section */}
-        <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+        <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-sm shadow-xl p-8 text-white">
           <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
           <p className="mb-4 text-blue-100">
             If you have any questions about this Privacy Policy, you can contact us:
           </p>
           <a 
             href="https://truleads.agency/" 
-            className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+            className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded hover:bg-blue-50 transition-colors"
           >
             Visit Our Website →
           </a>
@@ -219,4 +219,4 @@ export default function PrivacyPolicy() {
       </div>
     </div>
   );
-}
+}

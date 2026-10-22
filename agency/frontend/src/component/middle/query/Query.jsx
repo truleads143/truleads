@@ -45,8 +45,8 @@ const FormField = ({ label, name, type = 'text', required = false, isSelect = fa
 
     const inputClasses = `
       w-full p-3 border ${error ? 'border-red-500' : 'border-gray-300'}
-      rounded-lg bg-gray-100 text-gray-800 transition duration-150
-      focus:border-[#06B6D4] focus:ring-2 focus:ring-[#A5F3FC]
+      rounded bg-gray-100 text-gray-800 transition duration-150
+      focus:border-[#A67C37] focus:ring-2 focus:ring-[#ECE0C6]
       focus:outline-none
     `;
 
@@ -252,8 +252,8 @@ const Query = () => {
       <div className="w-full max-w-4xl">
 
         {/* --- Header / Description Section --- */}
-        <header className="text-center mb-10 p-6 rounded-2xl shadow-md bg-white">
-          <h1 className="text-3xl font-extrabold text-[#124D95] mb-4">
+        <header className="text-center mb-10 p-6 rounded-sm shadow-md bg-white">
+          <h1 className="text-3xl font-extrabold text-[#0F2A4A] mb-4">
             Request Expert Assistance
           </h1>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
@@ -261,23 +261,23 @@ const Query = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm font-medium">
-            <button onClick={() => navigate('/verticals/ACA')} className="px-3 cursor-pointer py-1 bg-[#A5F3FC] text-[#124D95] rounded-full shadow-sm">ACA (Affordable Care Act)</button>
-            <button onClick={() => navigate('/verticals/FE')} className="px-3 cursor-pointer py-1 bg-[#A5F3FC] text-[#124D95] rounded-full shadow-sm">Final Expense</button>
-            <button onClick={() => navigate('/verticals/SSDI')} className="px-3 cursor-pointer py-1 bg-[#A5F3FC] text-[#124D95] rounded-full shadow-sm">SSDI (Social Security Disability)</button>
-            <button onClick={() => navigate('/verticals/Medicare')} className="px-3 cursor-pointer py-1 bg-[#A5F3FC] text-[#124D95] rounded-full shadow-sm">Medicare</button>
-            <button onClick={() => navigate('/verticals/AutoInsurance')} className="px-3 cursor-pointer py-1 bg-[#A5F3FC] text-[#124D95] rounded-full shadow-sm">Auto Insurance</button>
+            <button onClick={() => navigate('/verticals/ACA')} className="px-3 cursor-pointer py-1 bg-[#ECE0C6] text-[#0F2A4A] rounded-full shadow-sm">ACA (Affordable Care Act)</button>
+            <button onClick={() => navigate('/verticals/FE')} className="px-3 cursor-pointer py-1 bg-[#ECE0C6] text-[#0F2A4A] rounded-full shadow-sm">Final Expense</button>
+            <button onClick={() => navigate('/verticals/SSDI')} className="px-3 cursor-pointer py-1 bg-[#ECE0C6] text-[#0F2A4A] rounded-full shadow-sm">SSDI (Social Security Disability)</button>
+            <button onClick={() => navigate('/verticals/Medicare')} className="px-3 cursor-pointer py-1 bg-[#ECE0C6] text-[#0F2A4A] rounded-full shadow-sm">Medicare</button>
+            <button onClick={() => navigate('/verticals/AutoInsurance')} className="px-3 cursor-pointer py-1 bg-[#ECE0C6] text-[#0F2A4A] rounded-full shadow-sm">Auto Insurance</button>
           </div>
         </header>
 
         {/* --- Form Card --- */}
-        <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-2xl hover:shadow-cyan-500/50 transition duration-300">
-          <h2 className="text-2xl font-bold text-[#124D95] mb-6 border-b-2 border-cyan-500 pb-2">
+        <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-sm shadow-2xl hover:shadow-cyan-500/50 transition duration-300">
+          <h2 className="text-2xl font-bold text-[#0F2A4A] mb-6 border-b-2 border-cyan-500 pb-2">
             Lead Query Form
           </h2>
 
           {/* Alert Message */}
           {alert && (
-            <div className={`p-4 mb-4 rounded-lg font-medium transition duration-300 ${alert.type === 'success' ? 'bg-green-100 text-green-700 border border-green-300' : 'bg-red-100 text-red-700 border border-red-300'}`}>
+            <div className={`p-4 mb-4 rounded font-medium transition duration-300 ${alert.type === 'success' ? 'bg-green-100 text-green-700 border border-green-300' : 'bg-red-100 text-red-700 border border-red-300'}`}>
               {alert.message}
             </div>
           )}
@@ -361,8 +361,8 @@ const Query = () => {
 
             {/* --- Conditional Fields for "Other" --- */}
             {isOtherService && (
-              <div className="bg-gray-100 p-4 rounded-xl mb-4 border border-cyan-200 transition-all duration-300">
-                <h3 className="text-lg font-semibold text-[#124D95] mb-3">Specify 'Other' Service Details</h3>
+              <div className="bg-gray-100 p-4 rounded-sm mb-4 border border-cyan-200 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-[#0F2A4A] mb-3">Specify 'Other' Service Details</h3>
 
                 {/* Other Service Name (still required) */}
                 <FormField
@@ -397,11 +397,11 @@ const Query = () => {
               type="submit"
               disabled={isSubmitting}
               className={`
-                w-full py-3 mt-6 text-lg font-semibold rounded-lg shadow-lg transition duration-200
+                w-full py-3 mt-6 text-lg font-semibold rounded shadow-lg transition duration-200
                 flex items-center justify-center
                 ${isSubmitting
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-[#124D95] text-white hover:bg-cyan-500 hover:shadow-xl hover:shadow-[#06B6D4]/50 focus:outline-none focus:ring-4 focus:ring-[#A5F3FC]'
+                  : 'bg-[#0F2A4A] text-white hover:bg-cyan-500 hover:shadow-xl hover:shadow-[#A67C37]/50 focus:outline-none focus:ring-4 focus:ring-[#ECE0C6]'
                 }
               `}
             >

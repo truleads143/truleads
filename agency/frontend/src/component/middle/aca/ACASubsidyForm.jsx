@@ -220,7 +220,7 @@ export default function ACASubsidyForm() {
         return (
             <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 flex items-center justify-center p-5">
                 <div className="w-full max-w-4xl">
-                    <div className="bg-white rounded-lg shadow-xl overflow-hidden">
+                    <div className="bg-white rounded shadow-xl overflow-hidden">
                         <div className="p-16 flex flex-col items-center justify-center text-center">
                             <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-400 rounded-full flex items-center justify-center mb-8 shadow-lg animate-bounce">
                                 <Check className="w-12 h-12 text-white" />
@@ -252,7 +252,7 @@ export default function ACASubsidyForm() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 flex items-center justify-center p-5">
             <div className="w-full max-w-4xl my-5">
-                <div className="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[700px]">
+                <div className="bg-white rounded shadow-xl overflow-hidden flex flex-col md:flex-row min-h-[700px]">
                     {/* Left Sidebar */}
                     <div className="md:w-2/5 bg-gradient-to-br from-blue-700 to-blue-900 text-white p-10 relative overflow-hidden flex flex-col justify-between">
                         <div className="absolute inset-0 opacity-10">
@@ -268,7 +268,7 @@ export default function ACASubsidyForm() {
 
                         <div className="relative z-10">
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center">
+                                <div className="w-12 h-12 bg-white/15 rounded-sm flex items-center justify-center">
                                     <Shield className="w-6 h-6" />
                                 </div>
                                 <div>
@@ -336,7 +336,7 @@ export default function ACASubsidyForm() {
                                                 value={formData.firstName}
                                                 onChange={handleInputChange}
                                                 placeholder="Enter your first name"
-                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
                                             />
                                         </div>
                                         {submitAttempted && errors.firstName && (
@@ -356,7 +356,7 @@ export default function ACASubsidyForm() {
                                                 value={formData.lastName}
                                                 onChange={handleInputChange}
                                                 placeholder="Enter your last name"
-                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
                                             />
                                         </div>
                                         {submitAttempted && errors.lastName && (
@@ -379,7 +379,7 @@ export default function ACASubsidyForm() {
                                                 value={formData.phone}
                                                 onChange={handleInputChange}
                                                 placeholder="(555) 123-4567"
-                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
                                             />
                                         </div>
                                         {submitAttempted && errors.phone && (
@@ -401,7 +401,7 @@ export default function ACASubsidyForm() {
                                                 onChange={handleInputChange}
                                                 maxLength={5}
                                                 placeholder="e.g., 90210"
-                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
                                             />
                                         </div>
                                         {submitAttempted && errors.zipcode && (
@@ -426,7 +426,7 @@ export default function ACASubsidyForm() {
                                                 onChange={handleInputChange}
                                                 maxLength={2}
                                                 placeholder="e.g., CA"
-                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white transition-all uppercase"
+                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded focus:outline-none focus:border-blue-500 focus:bg-white transition-all uppercase"
                                             />
                                         </div>
                                         {submitAttempted && errors.state && (
@@ -447,7 +447,7 @@ export default function ACASubsidyForm() {
                                                 value={formData.dob}
                                                 onChange={handleInputChange}
                                                 max={getTodayDate()}
-                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                                                className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border-2 border-gray-200 rounded focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
                                             />
                                         </div>
                                         {submitAttempted && errors.dob && (
@@ -464,7 +464,7 @@ export default function ACASubsidyForm() {
                                             {formatCurrency(formData.income)}
                                         </span>
                                     </label>
-                                    <div className="relative p-3 bg-gray-50 border-2 border-gray-200 rounded-lg">
+                                    <div className="relative p-3 bg-gray-50 border-2 border-gray-200 rounded">
                                         <input
                                             type="range"
                                             name="income"
@@ -473,7 +473,7 @@ export default function ACASubsidyForm() {
                                             step="1000"
                                             value={formData.income}
                                             onChange={handleInputChange}
-                                            className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer range-lg focus:outline-none focus:ring-2 focus:ring-blue-500 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:-mt-1.5 [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:bg-blue-300 [&::-webkit-slider-runnable-track]:rounded-lg"
+                                            className="w-full h-2 bg-blue-200 rounded appearance-none cursor-pointer range-lg focus:outline-none focus:ring-2 focus:ring-blue-500 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:-mt-1.5 [&::-webkit-slider-runnable-track]:h-2 [&::-webkit-slider-runnable-track]:bg-blue-300 [&::-webkit-slider-runnable-track]:rounded"
                                         />
                                         <div className="flex justify-between text-xs text-gray-500 mt-2">
                                             <span>{formatCurrency(MIN_INCOME)}</span>
@@ -487,7 +487,7 @@ export default function ACASubsidyForm() {
 
                                 {/* Age Display */}
                                 <div>
-                                    <div className={`bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-500 rounded-lg p-5 text-center transition-all ${age !== null ? 'animate-pulse' : ''}`}>
+                                    <div className={`bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-500 rounded p-5 text-center transition-all ${age !== null ? 'animate-pulse' : ''}`}>
                                         <div className="text-sm text-gray-600 mb-1">Your Calculated Age</div>
                                         <div className="text-4xl font-bold text-blue-900">
                                             {age !== null ? age : '--'}
@@ -497,7 +497,7 @@ export default function ACASubsidyForm() {
                                 </div>
 
                                 {/* Consent Section */}
-                                <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-blue-700">
+                                <div className="bg-gray-50 rounded p-6 border-l-4 border-blue-700">
                                     <div className="flex items-center mb-5">
                                         <div className="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center mr-4">
                                             <FileText className="w-5 h-5" />
@@ -506,7 +506,7 @@ export default function ACASubsidyForm() {
                                     </div>
 
                                     <div className="space-y-4">
-                                        <div className={`flex items-start p-4 bg-white rounded-lg border transition-all ${formData.consentMarketing ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'}`}>
+                                        <div className={`flex items-start p-4 bg-white rounded border transition-all ${formData.consentMarketing ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'}`}>
                                             <input
                                                 type="checkbox"
                                                 name="consentMarketing"
@@ -519,7 +519,7 @@ export default function ACASubsidyForm() {
                                             </label>
                                         </div>
 
-                                        <div className={`flex items-start p-4 bg-white rounded-lg border transition-all ${formData.consentPrivacy ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'}`}>
+                                        <div className={`flex items-start p-4 bg-white rounded border transition-all ${formData.consentPrivacy ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'}`}>
                                             <input
                                                 type="checkbox"
                                                 name="consentPrivacy"
@@ -532,7 +532,7 @@ export default function ACASubsidyForm() {
                                             </label>
                                         </div>
 
-                                        <div className={`flex items-start p-4 bg-white rounded-lg border transition-all ${formData.consentACA ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'}`}>
+                                        <div className={`flex items-start p-4 bg-white rounded border transition-all ${formData.consentACA ? 'border-blue-500 bg-blue-50/30' : 'border-gray-200'}`}>
                                             <input
                                                 type="checkbox"
                                                 name="consentACA"
@@ -548,7 +548,7 @@ export default function ACASubsidyForm() {
                                 </div>
 
                                 {/* Disclaimer */}
-                                <div className="bg-yellow-50 rounded-lg p-5 border-l-4 border-yellow-400">
+                                <div className="bg-yellow-50 rounded p-5 border-l-4 border-yellow-400">
                                     <div className="flex items-start">
                                         <AlertCircle className="w-5 h-5 text-yellow-700 mr-3 mt-0.5 flex-shrink-0" />
                                         <div className="text-sm leading-relaxed">
