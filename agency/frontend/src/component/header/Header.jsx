@@ -245,13 +245,6 @@ export default function Header() {
                                 </ul>
                             </li>
 
-                            {/* LinkedIn (opens the company page in a new tab) */}
-                            <li>
-                                <a href="https://www.linkedin.com/company/truleads-llc/" target="_blank" rel="noopener noreferrer" className={navLinkClass({ isActive: false })}>
-                                    LinkedIn
-                                </a>
-                            </li>
-
                             {/* Query NavLink */}
                             <li>
                                 <NavLink to="/query" className={navLinkClass}>
@@ -353,7 +346,6 @@ export default function Header() {
                         )}
                     </li>
 
-                    <li><a href="https://www.linkedin.com/company/truleads-llc/" target="_blank" rel="noopener noreferrer" onClick={() => setIsSidebarOpen(false)} className="flex justify-between py-2 hover:text-[#DCC59A]">LinkedIn</a></li>
 
                     {/* Query NavLink */}
                     <li><NavLink to="/query" onClick={() => setIsSidebarOpen(false)} className="flex justify-between">Query</NavLink></li>
