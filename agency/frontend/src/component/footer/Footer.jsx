@@ -46,8 +46,9 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-xl mb-5 text-white">Connect with Us</h3>
             <p className="text-[#B9C3D2] text-sm leading-relaxed mb-5">
-              HDFC BANK, Opp. DM Residence, Civil Lines, Bareilly - 243001<br />
-              Phone: +91 8127758686<br />
+              212 N. 2nd St. STE 100<br />
+              Richmond, KY 40475<br />
+              Phone: +1 (704) 263-9160<br />
               Email: connect@truleads.agency
             </p>
             <div className="flex gap-3">
@@ -56,7 +57,7 @@ export default function Footer() {
                 [FaTwitter, "#", "Twitter"],
                 [
                   FaLinkedinIn,
-                  "https://www.linkedin.com/in/sameer-sharma-ba7421220?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+                  "https://www.linkedin.com/company/truleads-llc/",
                   "LinkedIn",
                 ],
                 [FaInstagram, "#", "Instagram"],

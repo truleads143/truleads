@@ -153,9 +153,7 @@ export default function Header() {
     ];
 
     const company = [
-        { name: "Hiring", to: "/company/hiring" },
-        { name: "Blogs", to: "/company/blogs" },
-        { name: "LinkedIn", href: "https://www.linkedin.com/", external: true },
+        { name: "LinkedIn", href: "https://www.linkedin.com/company/truleads-llc/", external: true },
     ];
 
     // NEW Dropdown Data

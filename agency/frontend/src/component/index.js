@@ -7,12 +7,10 @@ import MedicareAdvantage from "./middle/medicare/Medicare"
 import ACALiveTransfers from "./middle/aca/Aca"
 import Query from "./middle/query/Query"
 import LucyAI from "./lucy/Lucy"
-import Hiring from "./middle/hiring/Hiring"
-import Blog from "./middle/blog/Blog"
 import AutoInsurance from "./middle/auto_insurance/AutoInsurance"
 import ACASubsidyForm from "./middle/aca/ACASubsidyForm"
 import PrivacyPolicy from "./middle/privacy_policy/PrivacyPolicy"
 import SSDILeads from "./middle/ssdi/Ssdi"
 
 
-export { Header, Footer, Home, About, FinalExpenseLeads, MedicareAdvantage, ACALiveTransfers, Query, LucyAI, Hiring, Blog, AutoInsurance, ACASubsidyForm, PrivacyPolicy, SSDILeads };
+export { Header, Footer, Home, About, FinalExpenseLeads, MedicareAdvantage, ACALiveTransfers, Query, LucyAI, AutoInsurance, ACASubsidyForm, PrivacyPolicy, SSDILeads };
