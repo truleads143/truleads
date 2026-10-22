@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Lato:wght@300;400;700&display=swap');
 @import "tailwindcss";
 
 /*
@@ -8,7 +8,8 @@
   are remapped here, so every page picks up the new palette automatically.
 */
 @theme {
-  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-script: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
   --font-sans: "Lato", "Helvetica Neue", Arial, sans-serif;
 
   /* Antique gold (replaces the old bright cyan accents) */
@@ -73,13 +74,23 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,
   h2,
   h3 {
     font-family: var(--font-serif);
     font-weight: 600;
-    letter-spacing: 0.005em;
-    line-height: 1.15;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  /* Page titles in calligraphy */
+  h1 {
+    font-family: var(--font-script);
+    font-weight: 400 !important;
+    font-size-adjust: 0.4; /* script letters run small; this enlarges them evenly */
+    letter-spacing: 0;
+    line-height: 1.1;
+    text-wrap: balance;
   }
 
   ::selection {

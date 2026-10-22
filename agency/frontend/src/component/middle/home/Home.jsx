@@ -146,11 +146,52 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <div className="absolute -bottom-4 -left-4 w-full h-full" style={{ backgroundColor: '#F1E9D9' }} />
-              <img
-                src="https://globaltrustassociation.org/wp-content/uploads/2021/01/teamwork-success.png"
-                alt="Teamwork success"
-                className="relative w-full h-80 object-cover"
-              />
+              {/* Illustration of the lead dashboard (built in code, so it can't break like a linked image) */}
+              <div
+                className="relative bg-white border border-[#E8E1D3] shadow-xl"
+                role="img"
+                aria-label="Example of the TruLeads lead dashboard"
+              >
+                <div className="flex items-center justify-between px-6 py-4" style={{ backgroundColor: NAVY }}>
+                  <p className="font-serif text-xl text-white">Today's Leads</p>
+                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase" style={{ color: '#DCC59A' }}>
+                    Live
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 border-b border-[#EFE9DD] text-center">
+                  {[
+                    ['New', '18'],
+                    ['Contacted', '42'],
+                    ['Closed', '27'],
+                  ].map(([label, count], i) => (
+                    <div key={label} className={`py-4 ${i ? 'border-l border-[#EFE9DD]' : ''}`}>
+                      <p className="font-serif text-3xl" style={{ color: NAVY }}>{count}</p>
+                      <p className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#5B6170]">{label}</p>
+                    </div>
+                  ))}
+                </div>
+                <ul className="divide-y divide-[#EFE9DD]">
+                  {[
+                    ['ACA', 'Live transfer · 11 min call', 'New', GOLD],
+                    ['Medicare', 'Callback scheduled 2:30 PM', 'Contacted', '#3F5880'],
+                    ['Final Expense', 'Policy application sent', 'Closed', '#2F6B4F'],
+                    ['Auto Insurance', 'Quote requested', 'Contacted', '#3F5880'],
+                  ].map(([vertical, note, status, color]) => (
+                    <li key={vertical} className="flex items-center justify-between gap-4 px-6 py-3.5">
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold" style={{ color: NAVY }}>{vertical}</p>
+                        <p className="text-xs text-[#5B6170] truncate">{note}</p>
+                      </div>
+                      <span
+                        className="shrink-0 text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 border"
+                        style={{ color, borderColor: color }}
+                      >
+                        {status}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div>
               <p className="eyebrow mb-3">Workflow Optimized</p>

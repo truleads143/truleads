@@ -216,7 +216,8 @@ const Query = () => {
     }
 
     setIsSubmitting(true);
-    const payload = { ...formData };
+    // The backend saves the "Other" service name from `otherServiceType`
+    const payload = { ...formData, otherServiceType: formData.otherServiceName };
 
     // Placeholder for Axios POST request to a mock endpoint
     console.log('Submitting payload:', payload);
@@ -236,9 +237,12 @@ const Query = () => {
       }
     } catch (error) {
       console.error('Submission Error:', error);
+      const serverMessage = error?.response?.data?.message;
       setAlert({
         type: 'error',
-        message: 'An error occurred during submission. Please try again later.'
+        message: serverMessage
+          ? `We couldn't submit your query: ${serverMessage}`
+          : "We couldn't reach our server just now. Please try again in a minute, or email us at connect@truleads.agency."
       });
     } finally {
       setIsSubmitting(false);
