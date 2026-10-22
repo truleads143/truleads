@@ -122,7 +122,7 @@ const FormField = ({ label, name, type = 'text', required = false, isSelect = fa
 const Query = () => {
 
 
-  const API_BASE_URL = import.meta.env.VITE_API_URL;
+  const API_BASE_URL = import.meta.env.VITE_API_URL || ''; // empty = same site, Netlify/Vercel forward /api to the backend
 
   const navigate = useNavigate(); // Initialize useNavigate
   const INITIAL_STATE = {
