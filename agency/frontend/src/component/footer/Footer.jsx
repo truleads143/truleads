@@ -59,7 +59,7 @@ export default function Footer() {
                   "https://www.linkedin.com/company/truleads-llc/",
                   "LinkedIn",
                 ],
-                [FaInstagram, "#", "Instagram"],
+                [FaInstagram, "https://www.instagram.com/truleadsllc/", "Instagram"],
               ].map(([Icon, href, label]) => (
                 <a
                   key={label}
