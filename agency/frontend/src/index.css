@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
 
 /*
   TruLeads — classic theme
-  Deep navy, antique gold and warm ivory, with a serif display face.
+  Deep navy, antique gold and warm ivory, set entirely in Arial.
   The Tailwind colour scales used across the pages (cyan / blue / indigo / sky)
   are remapped here, so every page picks up the new palette automatically.
 */
 @theme {
-  /* Headings: Dancing Script. Text: Source Sans 3. */
-  --font-serif: "Dancing Script", "Brush Script MT", cursive;
-  --font-script: "Dancing Script", "Brush Script MT", cursive;
-  --font-sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  /* Whole site in Arial (built into every computer and phone; Liberation Sans / Helvetica stand in where Arial is missing) */
+  --font-serif: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif;
+  --font-script: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif;
+  --font-sans: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif;
 
   /* Antique gold (replaces the old bright cyan accents) */
   --color-cyan-50: #fbf8f2;
@@ -75,13 +74,13 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* All headings in Dancing Script */
+  /* All headings bold Arial */
   h1,
   h2,
   h3 {
     font-family: var(--font-script);
-    font-weight: 600 !important;
-    letter-spacing: 0;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em;
     line-height: 1.15;
     text-wrap: balance;
   }
