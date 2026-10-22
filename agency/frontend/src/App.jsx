@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, Footer, About, FinalExpenseLeads, MedicareAdvantage, ACALiveTransfers , Query, Hiring, Blog,AutoInsurance, ACASubsidyForm, PrivacyPolicy} from './component/index';
+import { Home, Footer, About, FinalExpenseLeads, MedicareAdvantage, ACALiveTransfers , Query, AutoInsurance, ACASubsidyForm, PrivacyPolicy, SSDILeads} from './component/index';
 import Layout from './Layout';
 import ScrollToTop from './ScrollTop';
 
@@ -20,9 +20,8 @@ function App() {
 
           <Route path="/verticals/fe" element={<FinalExpenseLeads />} />
           <Route path="/verticals/medicare" element={<MedicareAdvantage />} />
+          <Route path="/verticals/ssdi" element={<SSDILeads />} />
           <Route path="/verticals/auto-insurance" element={<AutoInsurance />} />
-          <Route path="/company/hiring" element={<Hiring />} />
-          <Route path="/company/blogs" element={<Blog />} />
 
           <Route path="/query" element={<Query />} />
           {/* You can add more nested routes here */}

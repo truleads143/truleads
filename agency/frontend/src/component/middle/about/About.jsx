@@ -5,13 +5,13 @@ import { Phone, TrendingUp, Target, Shield, Clock, BarChart3, CheckCircle, Arrow
 
 // Define the color palette for clarity
 const colors = {
-  'primary-blue': '#124D95',
-  'cyan-200': '#A5F3FC',
-  'cyan-300': '#67E8F9',
-  'cyan-500': '#06B6D4',
-  'gray-100': '#F3F4F6',
-  'gray-200': '#E5E7EB',
-  'gray-500': '#6B7280',
+  'primary-blue': '#0F2A4A',
+  'cyan-200': '#ECE0C6',
+  'cyan-300': '#DCC59A',
+  'cyan-500': '#A67C37',
+  'gray-100': '#F6F2EA',
+  'gray-200': '#E8E1D3',
+  'gray-500': '#5B6170',
 };
 
 export default function LiveTransferLeads() {
@@ -33,7 +33,7 @@ export default function LiveTransferLeads() {
     <div className="min-h-screen bg-white">
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${colors['primary-blue']} 0%, ${colors['cyan-500']} 100%)` }}>
+      <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, #0F2A4A 0%, #1B3D66 100%)` }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-white mb-6">
@@ -44,7 +44,7 @@ export default function LiveTransferLeads() {
             </p>
             <button 
               onClick={() => navigate('/query')} 
-              className="px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:shadow-xl flex items-center mx-auto space-x-2 cursor-pointer hover:bg-cyan-300"
+              className="px-8 py-4 rounded font-semibold text-lg transition-all hover:shadow-xl flex items-center mx-auto space-x-2 cursor-pointer hover:bg-cyan-300"
               style={heroBtnStyle}
               onMouseEnter={(e) => Object.assign(e.currentTarget.style, heroBtnHoverStyle)}
               onMouseLeave={(e) => Object.assign(e.currentTarget.style, heroBtnStyle)}
@@ -71,7 +71,7 @@ export default function LiveTransferLeads() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+            <div className="bg-white p-8 rounded-sm shadow-lg text-center hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: colors['cyan-200'] }}>
                 <Target className="w-8 h-8" style={{ color: colors['primary-blue'] }} />
               </div>
@@ -81,7 +81,7 @@ export default function LiveTransferLeads() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+            <div className="bg-white p-8 rounded-sm shadow-lg text-center hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: colors['cyan-300'] }}>
                 <Phone className="w-8 h-8" style={{ color: colors['primary-blue'] }} />
               </div>
@@ -91,7 +91,7 @@ export default function LiveTransferLeads() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+            <div className="bg-white p-8 rounded-sm shadow-lg text-center hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ backgroundColor: colors['cyan-500'] }}>
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
@@ -189,7 +189,7 @@ export default function LiveTransferLeads() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
             {/* Metric 1: Connections Published */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white p-6 sm:p-8 rounded-sm shadow-lg hover:shadow-xl transition-shadow">
               {/* Responsive Metric Size: text-4xl on mobile, scales up to text-5xl on medium/desktop */}
               <h3 className="text-4xl sm:text-4xl font-bold mb-2" style={{ color: colors['cyan-500'] }}>15000+</h3>
               {/* Responsive description size: text-xs on mobile, scales up to text-sm */}
@@ -197,7 +197,7 @@ export default function LiveTransferLeads() {
             </div>
 
             {/* Metric 2: Revenue Generated for Clients */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white p-6 sm:p-8 rounded-sm shadow-lg hover:shadow-xl transition-shadow">
               {/* Responsive Metric Size: text-4xl on mobile, scales up to text-5xl on medium/desktop */}
               <h3 className="text-4xl sm:text-4xl font-bold mb-2" style={{ color: colors['cyan-500']}}>$50000+</h3>
               {/* Responsive description size: text-xs on mobile, scales up to text-sm */}
@@ -205,7 +205,7 @@ export default function LiveTransferLeads() {
             </div>
 
             {/* Metric 3: Looking Ahead (Using smaller font to ensure text fits on tablets) */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white p-6 sm:p-8 rounded-sm shadow-lg hover:shadow-xl transition-shadow">
               {/* Responsive Metric Size: text-2xl on mobile, scales up to text-3xl on medium/desktop */}
               <h3 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: colors['cyan-500']}}>Looking Ahead</h3>
               {/* Responsive description size: text-xs on mobile, scales up to text-sm */}
@@ -213,7 +213,7 @@ export default function LiveTransferLeads() {
             </div>
 
             {/* Metric 4: Average Call Length */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="bg-white p-6 sm:p-8 rounded-sm shadow-lg hover:shadow-xl transition-shadow">
               {/* Responsive Metric Size: text-3xl on mobile, scales up to text-4xl on medium/desktop */}
               <h3 className="text-3xl sm:text-4xl font-bold mb-2" style={{ color: colors['cyan-500']}}>11 Mins</h3>
               {/* Responsive description size: text-xs on mobile, scales up to text-sm */}
@@ -234,7 +234,7 @@ export default function LiveTransferLeads() {
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 rounded-xl" style={{ backgroundColor: colors['gray-100'] }}>
+            <div className="text-center p-6 rounded-sm" style={{ backgroundColor: colors['gray-100'] }}>
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors['cyan-200'] }}>
                 <CheckCircle className="w-8 h-8" style={{ color: colors['primary-blue'] }} />
               </div>
@@ -244,7 +244,7 @@ export default function LiveTransferLeads() {
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl" style={{ backgroundColor: colors['gray-100'] }}>
+            <div className="text-center p-6 rounded-sm" style={{ backgroundColor: colors['gray-100'] }}>
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors['cyan-300'] }}>
                 <Shield className="w-8 h-8" style={{ color: colors['primary-blue'] }} />
               </div>
@@ -254,7 +254,7 @@ export default function LiveTransferLeads() {
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl" style={{ backgroundColor: colors['gray-100'] }}>
+            <div className="text-center p-6 rounded-sm" style={{ backgroundColor: colors['gray-100'] }}>
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors['cyan-500'] }}>
                 <Target className="w-8 h-8 text-white" />
               </div>
@@ -264,7 +264,7 @@ export default function LiveTransferLeads() {
               </p>
             </div>
 
-            <div className="text-center p-6 rounded-xl" style={{ backgroundColor: colors['gray-100'] }}>
+            <div className="text-center p-6 rounded-sm" style={{ backgroundColor: colors['gray-100'] }}>
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors['cyan-200'] }}>
                 <BarChart3 className="w-8 h-8" style={{ color: colors['primary-blue'] }} />
               </div>
@@ -278,4 +278,4 @@ export default function LiveTransferLeads() {
       </section>
     </div>
   );
-}
+}

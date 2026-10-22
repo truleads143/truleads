@@ -16,7 +16,9 @@ connectMongoDb(process.env.DATABASE_URL)
 const allowedOrigins = [
   "http://localhost:5173",
   "https://truleads-frontend.vercel.app",
-  "https://www.truleads.agency"
+  "https://www.truleads.agency",
+  "https://truleads.agency",
+  "https://verdant-meringue-c5ac19.netlify.app"
 ];
 
 // CORS middleware — place BEFORE routes

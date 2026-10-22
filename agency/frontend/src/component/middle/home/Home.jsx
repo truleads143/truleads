@@ -1,241 +1,261 @@
 import React from 'react';
-// Using placeholders for icons, but 'lucide-react' icons would be the standard implementation.
-import { Zap, LayoutGrid, Users, CheckCircle } from 'lucide-react'; 
-import { useNavigate } from "react-router-dom"; 
-import {Link} from "react-router-dom"
-// ... other imports
+import { Link, useNavigate } from 'react-router-dom';
+import { HeartPulse, Shield, Stethoscope, Car, ArrowRight, Phone, BarChart3, Clock } from 'lucide-react';
 
-// Custom color palette matching the requirements
-const colors = {
-  'primary-blue': '#124D95',
-  'cyan-200': '#A5F3FC',
-  'cyan-300': '#67E8F9',
-  'cyan-500': '#06B6D4',
-  'gray-100': '#F3F4F6',
-  'gray-200': '#E5E7EB',
-  'gray-500': '#6B7280',
-  'black-50': '#00000080',
-};
+const NAVY = '#0F2A4A';
+const GOLD = '#A67C37';
 
-// Feature Card Component
-const FeatureCard = ({ icon: Icon, title, description, to }) => (
-  <div 
-    className="bg-white flex flex-col items-center p-6 rounded-2xl shadow-xl border-2 border-transparent 
-              transition duration-300 hover:scale-[1.02] hover:border-cyan-300"
-    style={{ borderColor: colors['cyan-300'] }} // Custom hover border color
-  >
-    <div className="flex items-center justify-center  w-12 h-12 mb-4 rounded-full" style={{ backgroundColor: colors['cyan-200'] }}>
-      <Icon className="w-6 h-6" style={{ color: colors['primary-blue'] }} />
-    </div>
-    <h3 className="text-xl font-semibold mb-2 text-center" style={{ color: colors['primary-blue'] }}><Link to={to}>{title}</Link></h3>
-    <p className="text-gray-500 text-center">{description}</p>
+const verticals = [
+  {
+    to: '/verticals/aca',
+    icon: HeartPulse,
+    title: 'ACA',
+    description:
+      'We simplify the complex world of Affordable Care Act (ACA) and Obamacare leads, keeping your sales process effective and efficient.',
+  },
+  {
+    to: '/verticals/fe',
+    icon: Shield,
+    title: 'Final Expense',
+    description:
+      'Final expense coverage handles end-of-life costs such as funeral expenses, medical bills and small debts, making it a critical product.',
+  },
+  {
+    to: '/verticals/medicare',
+    icon: Stethoscope,
+    title: 'Medicare',
+    description:
+      'High-intent leads for seniors seeking comprehensive Medicare coverage and additional healthcare benefits.',
+  },
+  {
+    to: '/verticals/auto-insurance',
+    icon: Car,
+    title: 'Auto Insurance',
+    description:
+      'Connecting agents with drivers actively searching for competitive rates and reliable vehicle protection.',
+  },
+];
+
+const stats = [
+  { value: '15,000+', label: 'Connections Published' },
+  { value: '$50,000+', label: 'Revenue Generated for Clients' },
+  { value: '11 min', label: 'Average Call Length' },
+  { value: 'Growing', label: 'Currently Seeking More Buyers' },
+];
+
+const SectionHeading = ({ eyebrow, title, light = false }) => (
+  <div className="text-center mb-14">
+    {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
+    <h2 className={`text-4xl md:text-5xl ${light ? 'text-white' : ''}`} style={light ? {} : { color: NAVY }}>
+      {title}
+    </h2>
+    <span className="gold-rule" />
   </div>
 );
 
-// Main Component
 const Home = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
-  const features = [
-    {  to:"/verticals/aca", icon: LayoutGrid, title: 'ACA', description: 'we simplify the complex world of Affordable Care Act (ACA) and Obamacare leads, ensuring your sales process is both effective and efficient.' },
-    {to:"/verticals/fe" ,icon: Users, title: 'Final Expense', description: 'Final expense insurance addresses the costs associated with the end of life, such as funeral expenses, medical bills, and small debts making it a critical product' },
-    { to:"/verticals/medicare" , icon: Zap, title: 'Medicare', description: 'We provide high-intent leads for seniors seeking comprehensive Medicare coverage and additional healthcare benefits.' },
-    {to:"/verticals/auto-insurance" , icon: CheckCircle, title: 'Auto Insurance', description: 'Connecting agents with drivers actively searching for competitive rates and reliable vehicle protection.' },
-  ];
-
-  // Helper object for the Get Started button (Default State)
-  const getStartedButtonStyle = {
-    backgroundColor: colors['cyan-500'], // Default color: vibrant cyan
-    color: '#FFFFFF',
-    boxShadow: `0 4px 6px -1px ${colors['black-50']}, 0 2px 4px -2px ${colors['black-50']}`
-  };
-  // Helper object for the Get Started button (Hover State)
-  const getStartedHoverStyle = {
-    backgroundColor: colors['cyan-300'] // Hover color: lighter cyan
-  };
-
-  // Helper object for the CTA button (Default State)
-  const ctaButtonStyle = {
-    backgroundColor: '#FFFFFF', // Default color: White
-    color: colors['primary-blue'],
-    boxShadow: `0 4px 6px -1px ${colors['black-50']}, 0 2px 4px -2px ${colors['black-50']}`
-  };
-  // Helper object for the CTA button (Hover State)
-  const ctaHoverStyle = {
-    backgroundColor: colors['cyan-200'] // Hover color: light cyan
-  };
-
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FFFFFF' }}>
-      
-      {/* 1. Hero Section */}
-      <section 
-        className="py-16 md:py-24" 
-        style={{ backgroundColor: colors['primary-blue'] }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            
-            {/* Left Content */}
-            <div className="md:w-1/2 mb-10 md:mb-0">
-              <h1 
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight" 
-                style={{ color: '#FFFFFF', textShadow: `2px 2px 4px ${colors['black-50']}` }}
-              >
+    <div className="min-h-screen" style={{ backgroundColor: '#FBF9F5' }}>
+      {/* 1. Hero */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: NAVY }}>
+        <div
+          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{
+            backgroundImage:
+              'repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 14px)',
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="grid md:grid-cols-2 gap-14 items-center">
+            <div>
+              <p className="eyebrow mb-5" style={{ color: '#DCC59A' }}>
+                Insurance Lead Generation
+              </p>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
                 Simplify Your Call Center Operations
               </h1>
-              <p 
-                className="text-xl mb-8 max-w-lg" 
-                style={{ color: colors['gray-200'] }}
-              >
-                Our platform provides a streamlined, all-in-one solution for managing leads, tracking agent performance, and boosting overall customer service efficiency.
+              <div className="w-16 h-[2px] mb-6" style={{ backgroundColor: GOLD }} />
+              <p className="text-lg leading-relaxed mb-10 max-w-lg text-[#D5DCE6] font-light">
+                A streamlined, all-in-one partner for managing leads, tracking agent performance and
+                raising the standard of your customer service.
               </p>
-              
-              {/* IMPROVED GET STARTED BUTTON: Now applies default style directly */}
-              <button 
-                className="bg-gray-100 text-[#124D95] px-6 text-xl py-3 rounded-xl font-semibold shadow-2xl shadow-zinc-800
-                                       transition duration-300 hover:bg-cyan-200 hover:shadow-md cursor-pointer"
-                onClick={()=> navigate("/query")}
-                // Apply default style here
-
-              >
-                Get Started
-              </button>
-            </div>
-            
-            {/* Right Illustration Placeholder */}
-            <div className="md:w-1/2 flex justify-center md:justify-end">
-              <div className="w-full max-w-md h-64 bg-gray-300 rounded-2xl flex items-center justify-center text-gray-500 text-lg border border-dashed border-gray-500">
-                <img src="https://media.istockphoto.com/id/1833005820/photo/call-center-woman-smile-and-portrait-at-headphones-job-and-staff-group-with-computer-advice.jpg?s=612x612&w=0&k=20&c=Y8aAwFhGKKJIBMGgkQLJNaCldWe7JuXoDbqfEhq9goc=" alt="Call center staff" className="w-full h-full object-cover rounded-2xl" />
+              <div className="flex flex-wrap gap-4">
+                <button className="btn-gold" onClick={() => navigate('/query')}>
+                  Get Started <ArrowRight className="w-4 h-4" />
+                </button>
+                <Link to="/about" className="btn-outline text-white hover:bg-white hover:text-[#0F2A4A]">
+                  Learn More
+                </Link>
               </div>
+            </div>
+
+            <div className="relative hidden md:block">
+              <div
+                className="absolute -top-4 -right-4 w-full h-full border"
+                style={{ borderColor: GOLD }}
+              />
+              <img
+                src="https://media.istockphoto.com/id/1833005820/photo/call-center-woman-smile-and-portrait-at-headphones-job-and-staff-group-with-computer-advice.jpg?s=612x612&w=0&k=20&c=Y8aAwFhGKKJIBMGgkQLJNaCldWe7JuXoDbqfEhq9goc="
+                alt="Call center staff"
+                className="relative w-full h-[380px] object-cover shadow-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Features Section */}
-      <section 
-        className="py-16 md:py-24" 
-        style={{ backgroundColor: colors['gray-100'] }}
-      >
+      {/* 2. Verticals */}
+      <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: colors['primary-blue'] }}>
-            Key Features to Boost Productivity
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
+          <SectionHeading eyebrow="What We Offer" title="Our Verticals" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {verticals.map(({ to, icon: Icon, title, description }) => (
+              <Link
+                key={title}
+                to={to}
+                className="group bg-white p-8 border border-[#E8E1D3] border-t-2 transition duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col"
+                style={{ borderTopColor: GOLD }}
+              >
+                <div
+                  className="w-12 h-12 flex items-center justify-center border mb-6"
+                  style={{ borderColor: GOLD }}
+                >
+                  <Icon className="w-5 h-5" style={{ color: GOLD }} />
+                </div>
+                <h3 className="text-2xl mb-3" style={{ color: NAVY }}>
+                  {title}
+                </h3>
+                <p className="text-sm leading-relaxed text-[#5B6170] flex-1">{description}</p>
+                <span
+                  className="mt-6 inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase"
+                  style={{ color: GOLD }}
+                >
+                  Explore <ArrowRight className="w-3.5 h-3.5 transition group-hover:translate-x-1" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      ---
-      
-      {/* 3. Service Highlights Section */}
-      <section className="py-16 md:py-24">
+      {/* 3. Highlight */}
+      <section className="py-20 md:py-28 bg-white border-y border-[#EFE9DD]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            
-            {/* Left Image Placeholder */}
-            <div className="md:w-1/2">
-              <div className="w-full h-72 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-500 text-lg border border-dashed border-gray-500">
-                <img src="https://globaltrustassociation.org/wp-content/uploads/2021/01/teamwork-success.png" alt="Teamwork success" className="w-full h-full object-cover rounded-2xl" />
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="absolute -bottom-4 -left-4 w-full h-full" style={{ backgroundColor: '#F1E9D9' }} />
+              {/* Illustration of the lead dashboard (built in code, so it can't break like a linked image) */}
+              <div
+                className="relative bg-white border border-[#E8E1D3] shadow-xl"
+                role="img"
+                aria-label="Example of the TruLeads lead dashboard"
+              >
+                <div className="flex items-center justify-between px-6 py-4" style={{ backgroundColor: NAVY }}>
+                  <p className="font-serif text-xl text-white">Today's Leads</p>
+                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase" style={{ color: '#DCC59A' }}>
+                    Live
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 border-b border-[#EFE9DD] text-center">
+                  {[
+                    ['New', '18'],
+                    ['Contacted', '42'],
+                    ['Closed', '27'],
+                  ].map(([label, count], i) => (
+                    <div key={label} className={`py-4 ${i ? 'border-l border-[#EFE9DD]' : ''}`}>
+                      <p className="font-serif text-3xl" style={{ color: NAVY }}>{count}</p>
+                      <p className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#5B6170]">{label}</p>
+                    </div>
+                  ))}
+                </div>
+                <ul className="divide-y divide-[#EFE9DD]">
+                  {[
+                    ['ACA', 'Live transfer · 11 min call', 'New', GOLD],
+                    ['Medicare', 'Callback scheduled 2:30 PM', 'Contacted', '#3F5880'],
+                    ['Final Expense', 'Policy application sent', 'Closed', '#2F6B4F'],
+                    ['Auto Insurance', 'Quote requested', 'Contacted', '#3F5880'],
+                  ].map(([vertical, note, status, color]) => (
+                    <li key={vertical} className="flex items-center justify-between gap-4 px-6 py-3.5">
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold" style={{ color: NAVY }}>{vertical}</p>
+                        <p className="text-xs text-[#5B6170] truncate">{note}</p>
+                      </div>
+                      <span
+                        className="shrink-0 text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 border"
+                        style={{ color, borderColor: color }}
+                      >
+                        {status}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-            
-            {/* Right Text Content */}
-            <div className="md:w-1/2">
-              <span 
-                className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full mb-3" 
-                style={{ backgroundColor: colors['cyan-200'], color: colors['primary-blue'] }}
-              >
-                🚀 Workflow Optimized
-              </span>
-              <h2 className="text-3xl font-bold mb-4" style={{ color: colors['primary-blue'] }}>
+            <div>
+              <p className="eyebrow mb-3">Workflow Optimized</p>
+              <h2 className="text-4xl md:text-5xl mb-6" style={{ color: NAVY }}>
                 Empower Your Team with Real-Time Data
               </h2>
-              <p className="text-lg mb-4" style={{ color: colors['gray-500'] }}>
-                Our intuitive dashboard allows employees to <strong>view and prioritize leads</strong> effortlessly, ensuring no opportunity is missed. They can quickly <strong>update status</strong>—from 'New' to 'Contacted' or 'Closed'—and log detailed notes.
+              <p className="text-lg leading-relaxed mb-5 text-[#5B6170]">
+                Our intuitive dashboard lets your people <strong className="text-[#0F2A4A]">view and prioritize leads</strong>{' '}
+                effortlessly, so no opportunity is missed. Statuses move from "New" to "Contacted" to "Closed" in a
+                click, with detailed notes along the way.
               </p>
-              <p className="text-lg" style={{ color: colors['gray-500'] }}>
-                This visibility helps them <strong>track progress</strong> and see the entire customer journey, fostering a more informed and efficient sales cycle.
+              <p className="text-lg leading-relaxed mb-8 text-[#5B6170]">
+                That visibility helps everyone <strong className="text-[#0F2A4A]">track progress</strong> across the
+                entire customer journey, for a better-informed and more efficient sales cycle.
               </p>
+              <ul className="grid sm:grid-cols-3 gap-4 text-sm text-[#0F2A4A]">
+                {[
+                  [Phone, 'Live transfers'],
+                  [BarChart3, 'Clear reporting'],
+                  [Clock, 'Fast follow-up'],
+                ].map(([Icon, label]) => (
+                  <li key={label} className="flex items-center gap-2">
+                    <Icon className="w-4 h-4" style={{ color: GOLD }} /> {label}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      ---
-
-      {/* 4. Our Impact Section (Responsive Sizing Confirmed) */}
-      <section className="py-12 sm:py-20" style={{ backgroundColor: colors['gray-100'] }}> 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 md:mb-12" style={{ color: colors['primary-blue'] }}>
-            Our Impact So Far
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-            {/* Metric 1: Connections Published */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-4xl sm:text-4xl font-bold mb-2" style={{ color: colors['cyan-500'] }}>15000+</h3>
-              <p className="text-xs sm:text-sm text-gray-500">Connections Published</p>
-            </div>
-
-            {/* Metric 2: Revenue Generated for Clients */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-4xl sm:text-4xl font-bold mb-2" style={{ color: colors['cyan-500']}}>$50000+</h3>
-              <p className="text-xs sm:text-sm text-gray-500">Revenue Generated for Clients</p>
-            </div>
-
-            {/* Metric 3: Looking Ahead */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: colors['cyan-500']}}>Looking Ahead</h3>
-              <p className="text-xs sm:text-sm text-gray-500">Currently Seeking More Buyers to Scale</p>
-            </div>
-
-            {/* Metric 4: Average Call Length */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <h3 className="text-3xl sm:text-4xl font-bold mb-2" style={{ color: colors['cyan-500']}}>11 Mins</h3>
-              <p className="text-xs sm:text-sm text-gray-500">Average Call Length</p>
-            </div>
+      {/* 4. Impact */}
+      <section className="py-20 md:py-24" style={{ backgroundColor: NAVY }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading eyebrow="Track Record" title="Our Impact So Far" light />
+          <div className="grid grid-cols-2 lg:grid-cols-4">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={`text-center px-4 py-6 ${i !== 0 ? 'lg:border-l' : ''} ${i % 2 ? 'border-l lg:border-l' : ''}`}
+                style={{ borderColor: 'rgba(220,197,154,0.3)' }}
+              >
+                <p className="font-serif text-4xl md:text-5xl font-semibold mb-2" style={{ color: '#DCC59A' }}>
+                  {s.value}
+                </p>
+                <p className="text-xs tracking-[0.18em] uppercase text-[#B9C3D2]">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      ---
-
-      {/* 5. Call To Action (CTA) Section */}
-      <section className="py-16 md:py-20">
-        <div 
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center rounded-2xl p-10 sm:p-16" 
-          style={{ 
-            background: `linear-gradient(90deg, ${colors['primary-blue']} 0%, ${colors['cyan-500']} 100%)`
-          }}
-        >
-          <h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6" 
-            style={{ color: '#FFFFFF' }}
-          >
+      {/* 5. CTA */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="eyebrow mb-3">Let's Work Together</p>
+          <h2 className="text-4xl md:text-5xl mb-6" style={{ color: NAVY }}>
             Ready to streamline your leads?
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto" style={{ color: colors['gray-200'] }}>
-            Join the hundreds of call centers who are already achieving better results with our streamlined lead management system.
+          <p className="text-lg leading-relaxed mb-10 text-[#5B6170] max-w-2xl mx-auto">
+            Join the call centers already achieving better results with our streamlined lead management.
           </p>
-          
-          {/* IMPROVED CTA BUTTON: Now applies default style directly */}
-          <button 
-            className="w-full md:w-auto py-3 px-10 text-lg font-bold rounded-2xl 
-                        transition duration-300 shadow-xl"
-            onClick={() => navigate('/query')}
-            // Apply default style here
-            style={ctaButtonStyle}
-            // Apply hover style on mouse enter
-            onMouseEnter={(e) => Object.assign(e.currentTarget.style, ctaHoverStyle)}
-            // Revert to default style on mouse leave
-            onMouseLeave={(e) => Object.assign(e.currentTarget.style, ctaButtonStyle)}
-          >
-            Contact Us
+          <button className="btn-gold" onClick={() => navigate('/query')}>
+            Contact Us <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </section>
